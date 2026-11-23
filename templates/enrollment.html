@@ -1,1 +1,12 @@
-
+{% extends "base.html" %}
+{% block title %}Enrollment · Campus Connect{% endblock %}
+{% block page %}enrollment{% endblock %}
+{% block heading %}Enrollment{% endblock %}
+{% block content %}
+<form class="panel" id="form">
+  <label>Student<select name="student_id" id="student_id" required></select></label>
+  <label>Course<select name="course_id" id="course_id" required></select></label>
+  <button class="btn primary" type="submit">Enroll student</button>
+</form>
+<section class="panel section"><h2>Enrollment records</h2><div id="list"></div></section>
+{% endblock %}
