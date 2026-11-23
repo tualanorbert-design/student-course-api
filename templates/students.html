@@ -1,1 +1,13 @@
-
+{% extends "base.html" %}
+{% block title %}Students · Campus Connect{% endblock %}
+{% block page %}students{% endblock %}
+{% block heading %}Students{% endblock %}
+{% block content %}
+<form class="panel" id="form">
+  <label>Full name<input name="name" required></label>
+  <label>Email<input name="email" type="email" required></label>
+  <label>Program<input name="program" placeholder="e.g. BS Computer Science"></label>
+  <button class="btn primary" type="submit">Add student</button>
+</form>
+<section class="panel section"><h2>Student records</h2><div id="list"></div></section>
+{% endblock %}
