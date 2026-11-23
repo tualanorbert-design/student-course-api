@@ -1,1 +1,12 @@
-
+{% extends "base.html" %}
+{% block title %}Announcements · Campus Connect{% endblock %}
+{% block page %}announcements{% endblock %}
+{% block heading %}Announcements{% endblock %}
+{% block content %}
+<form class="panel" id="form">
+  <label class="wide">Title<input name="title" required></label>
+  <label class="wide">Message<textarea name="body" required></textarea></label>
+  <button class="btn primary" type="submit">Post announcement</button>
+</form>
+<section class="panel section"><h2>Posted announcements</h2><div id="list"></div></section>
+{% endblock %}
