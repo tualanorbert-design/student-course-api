@@ -1,1 +1,23 @@
-
+{% extends "base.html" %}
+{% block title %}Dashboard · Campus Connect{% endblock %}
+{% block page %}dashboard{% endblock %}
+{% block heading %}Dashboard{% endblock %}
+{% block content %}
+<section class="stats">
+  <div class="panel stat"><div class="label">Total students<span class="icon">👥</span></div><div class="num" id="stat-students">0</div><div class="sub">Registered student records</div></div>
+  <div class="panel stat"><div class="label">Total courses<span class="icon">📖</span></div><div class="num" id="stat-courses">0</div><div class="sub">Courses in the catalog</div></div>
+  <div class="panel stat"><div class="label">Total enrollments<span class="icon">📋</span></div><div class="num" id="stat-enrollments">0</div><div class="sub">All enrollment records</div></div>
+  <div class="panel stat"><div class="label">Available courses<span class="icon">🚪</span></div><div class="num" id="stat-available">0</div><div class="sub">Courses with open slots</div></div>
+</section>
+<section class="grid">
+  <div class="panel section">
+    <div class="section-head"><h2>Recent enrollment activity</h2><a href="/enrollment">View all</a></div>
+    <p class="hint">Latest records returned by GET /api/enrollments</p>
+    <div id="recent"></div>
+  </div>
+  <div class="panel section">
+    <div class="section-head"><h2>Announcements</h2><a href="/announcements">Manage</a></div>
+    <div id="notes"></div>
+  </div>
+</section>
+{% endblock %}
