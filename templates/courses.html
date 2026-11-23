@@ -1,1 +1,14 @@
-
+{% extends "base.html" %}
+{% block title %}Courses · Campus Connect{% endblock %}
+{% block page %}courses{% endblock %}
+{% block heading %}Courses{% endblock %}
+{% block content %}
+<form class="panel" id="form">
+  <label>Course code<input name="code" required placeholder="CS101"></label>
+  <label>Title<input name="title" required></label>
+  <label>Instructor<input name="instructor"></label>
+  <label>Capacity<input name="capacity" type="number" min="1" value="30"></label>
+  <button class="btn primary" type="submit">Add course</button>
+</form>
+<section class="panel section"><h2>Course catalog</h2><div id="list"></div></section>
+{% endblock %}
