@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Campus Connect{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-page="{% block page %}dashboard{% endblock %}">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">CC</div>Campus Connect</div>
+    <nav class="nav">
+      {% set links = [('index','Dashboard','/'),('students_page','Students','/students'),('courses_page','Courses','/courses'),('enrollment_page','Enrollment','/enrollment'),('announcements_page','Announcements','/announcements')] %}
+      {% for ep, label, href in links %}
+        <a href="{{ href }}" class="{{ 'active' if request.endpoint == ep }}">{{ label }}</a>
+      {% endfor %}
+    </nav>
+    <div class="side-foot">
+      <span class="pill api-status">API offline</span>
+      <div class="user"><b>Jan Rex Carisma</b><span>janrex553@gmail.com</span></div>
+    </div>
+  </aside>
+  <main>
+    <header class="panel header">
+      <div>
+        <h1>{% block heading %}{% endblock %}</h1>
+        <p>Northbridge University · Integrated Student Enrollment and Information System</p>
+      </div>
+      <div class="actions">
+        <span class="pill api-status">API offline</span>
+        <button class="btn" id="refresh">Refresh</button>
+      </div>
+    </header>
+    {% block content %}{% endblock %}
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+</body>
+</html>
